@@ -31,6 +31,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+import { Separator } from "@/components/ui/separator";
+
 interface navLinksProps {
   name: string;
   link: string;
@@ -81,15 +83,70 @@ export default function Home() {
       </header>
 
       <div className="w-full h-full flex overflow-hidden mt-[60px]">
-        <div className="px-2 py-4 border-r-[1px] gap-4 h-full w-full max-w-[300px] flex flex-col">
-          {navLinks.map((item) => (
-            <>
-              <div className="flex cursor-pointer gap-2 px-4 py-2">
-                {item.icon}
-                <span>{item.name}</span>
-              </div>
-            </>
-          ))}
+        <div className="h-full max-w-[300px] w-full px-2 py-4 border-r-[1px] flex flex-col gap-4 ">
+          <div className="gap-4  w-full  flex flex-col">
+            {navLinks.map((item, index) => (
+              <>
+                <div
+                  key={index}
+                  className="flex cursor-pointer gap-2 px-4 py-2"
+                >
+                  {item.icon}
+                  <span>{item.name}</span>
+                </div>
+              </>
+            ))}
+          </div>
+
+          <Separator />
+
+          <div className="px-2">
+            <span className="text-[1.5rem] font-semibold">Topic</span>
+          </div>
+          <div className="gap-2  w-full  flex flex-col">
+            {navLinks.map((item, index) => (
+              <>
+                <div
+                  key={index}
+                  className="flex cursor-pointer gap-2 px-4 py-2"
+                >
+                  <span>{item.name}</span>
+                </div>
+              </>
+            ))}
+          </div>
+
+          <Separator />
+
+          <div className="px-2">
+            <span className="text-[1.5rem] font-semibold">Resources</span>
+          </div>
+          <div className="gap-2  w-full  flex flex-col">
+            {navLinks.map((item, index) => (
+              <>
+                <div
+                  key={index}
+                  className="flex cursor-pointer gap-2 px-4 py-2"
+                >
+                  <span>{item.name}</span>
+                </div>
+              </>
+            ))}
+          </div>
+          <Separator />
+
+          <div className="flex flex-wrap">
+            {navLinks.map((item, index) => (
+              <>
+                <div
+                  key={index}
+                  className="flex text-[12px] cursor-pointer gap-2 px-4 py-2"
+                >
+                  <span>{item.name}</span>
+                </div>
+              </>
+            ))}
+          </div>
         </div>
         <div className="w-full bg-red-50 p-8 flex flex-col gap-8 hs overflow-hidden overflow-y-auto">
           {Array.from({ length: 10 }).map((item, index) => (
@@ -169,14 +226,34 @@ export default function Home() {
         </div>
         <div className="px-4 py-4 border-l-[1px] w-full gap-4 h-full max-w-[400px] flex flex-col">
           <Button>Post a Question</Button>
-          {navLinks.map((item) => (
+          {/*  {navLinks.map((item, index) => (
             <>
-              <div className="flex cursor-pointer gap-2 px-4 py-2">
+              <div key={index} className="flex cursor-pointer gap-2 px-4 py-2">
                 {item.icon}
                 <span>{item.name}</span>
               </div>
             </>
-          ))}
+          ))} */}
+
+          <Card className="">
+            <CardHeader>Popular Communities</CardHeader>
+            <CardContent className="gap-4 flex flex-col">
+              {Array.from({ length: 4 }).map((item, index) => (
+                <div className="flex gap-2" key={index}>
+                  <Avatar>
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarFallback>CN</AvatarFallback>
+                  </Avatar>
+                  <div className="flex items-start flex-col">
+                    <span>s/JAVALearner</span>
+                    <span className="text-[12px] text-foreground">
+                      71,560 members
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
         </div>
       </div>
     </main>
