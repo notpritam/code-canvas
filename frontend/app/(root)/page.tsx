@@ -42,7 +42,7 @@ interface navLinksProps {
 export default function Home() {
   return (
     <div className="w-full h-full flex overflow-hidden">
-      <div className="w-full bg-red-50 p-8 flex flex-col gap-8 hs overflow-hidden overflow-y-auto">
+      <div className="w-full bg-purple-50 p-8 flex flex-col gap-8 hs overflow-hidden overflow-y-auto">
         {Array.from({ length: 10 }).map((item, index) => (
           <ProductCard key={index} />
         ))}
