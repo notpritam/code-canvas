@@ -76,18 +76,11 @@ function ReplyCard() {
           <span className="text-[.85rem]">2.3k</span>
           <ThumbsDown size={16} strokeWidth={0.75} />
         </div>
-        <Link
-          href={`/post/${index}`}
-          key={index}
-          className="flex gap-2 rounded-full border items-center px-4 py-2"
-        >
-          <MessageCircleMore size={16} strokeWidth={0.75} />
-          <span className="text-[.85rem]">1.3k Comments</span>
-        </Link>
-        <div className="flex gap-2 rounded-full border items-center px-4 py-2">
+
+        {/* <div className="flex gap-2 rounded-full border items-center px-4 py-2">
           <Share size={16} strokeWidth={0.75} />
           <span className="text-[.85rem]">Share</span>
-        </div>
+        </div> */}
       </CardFooter>
     </Card>
   );

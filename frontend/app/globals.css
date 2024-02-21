@@ -85,3 +85,7 @@
   background-color: #062e08; /* Color of the scrollbar thumb */
   border-radius: 10px; /* Rounded corners */
 }
+
+.hide::-webkit-scrollbar {
+  width: 0px;
+}
