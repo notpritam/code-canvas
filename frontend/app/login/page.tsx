@@ -28,13 +28,13 @@ function Page() {
       />
       <div className="flex relative z-[1] flex-col justify-between h-screen flex-[6] w-full p-32 backdrop-blur-md text-white ">
         <Image
-          className="border absolute top-8 left-32 z-[10]"
-          src="/logo.svg"
+          className="absolute top-8 left-32 z-[10]"
+          src="/code.png"
           alt="logo"
           width={100}
           height={100}
         />
-        <div className="lg:text-[4rem]  z-[1] font-semibold h-full justify-center flex flex-col gap-2 items-start">
+        <div className="lg:text-[5rem]  z-[1] font-semibold  mt-8 justify-center flex flex-col gap-2 items-start">
           <span>Learn to code.</span>
           <span>Interactively.</span>
           <span>For free.</span>
@@ -59,8 +59,10 @@ function Page() {
         <span className="lg:text-[2.5rem] font-medium">
           Join over 20 million learners around the globe
         </span>
-        <span>
-          Master the art of coding while communicating with your peers
+        <span className="opacity-65">
+          Welcome to CodeCanvas! Sign in to access a vibrant community of
+          student programmers and coding enthusiasts. Connect, collaborate, and
+          code with us.
         </span>
         <Button>
           <Github /> Login with Github
