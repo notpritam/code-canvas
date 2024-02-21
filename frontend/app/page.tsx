@@ -1,7 +1,35 @@
 import { Button } from "@/components/ui/button";
-import { BookText, Bookmark, LucideHome, UsersRound } from "lucide-react";
+import {
+  BookText,
+  Bookmark,
+  LucideHome,
+  MessageCircleMore,
+  MoreVerticalIcon,
+  Share,
+  ThumbsDown,
+  ThumbsUp,
+  UsersRound,
+} from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface navLinksProps {
   name: string;
@@ -63,10 +91,79 @@ export default function Home() {
             </>
           ))}
         </div>
-        <div className="w-full bg-red-50 p-8 flex flex-col overflow-hidden overflow-y-auto">
+        <div className="w-full bg-red-50 p-8 flex flex-col gap-8 hs overflow-hidden overflow-y-auto">
           {Array.from({ length: 10 }).map((item, index) => (
             <>
-              <div></div>
+              <Card>
+                <CardHeader className="flex justify-between flex-row">
+                  <div className="flex gap-2">
+                    <Avatar>
+                      <AvatarImage src="https://github.com/shadcn.png" />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <div className="flex items-start flex-col">
+                      <span className="text-[12px] text-foreground">
+                        @notpritam
+                      </span>
+                      <span>Pritam Sharma</span>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-2 ">
+                    {/* Badge */}
+                    <Badge variant="outline">s/JavaCode</Badge>
+                    <Badge variant="outline">Community Verified</Badge>
+                    <Badge variant={"outline"} className="cursor-pointer">
+                      <Bookmark size={16} strokeWidth={0.75} />
+                    </Badge>
+                    {/* <DropdownMenu>
+                      <DropdownMenuTrigger>
+                        <MoreVerticalIcon strokeWidth={0.75} />
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent>
+                        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>Save</DropdownMenuItem>
+
+                        <DropdownMenuItem>Report</DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu> */}
+                  </div>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-4">
+                  <CardTitle>
+                    How to disable error highlighting for Java code in VS Code?
+                  </CardTitle>
+                  <CardDescription>
+                    I to disable in java VS Code. VS Codo tries to a Groovy tile
+                    its is Java
+                  </CardDescription>
+                  <div className="flex gap-2">
+                    <Image
+                      src={"/bg.jpg"}
+                      className="rounded-md"
+                      height={300}
+                      width={400}
+                      alt="Image"
+                    />
+                  </div>
+                </CardContent>
+                <CardFooter className="gap-2">
+                  <div className="flex gap-2 rounded-full border items-center px-4 py-2">
+                    <ThumbsUp size={16} strokeWidth={0.75} />
+                    <span className="text-[.85rem]">2.3k</span>
+                    <ThumbsDown size={16} strokeWidth={0.75} />
+                  </div>
+                  <div className="flex gap-2 rounded-full border items-center px-4 py-2">
+                    <MessageCircleMore size={16} strokeWidth={0.75} />
+                    <span className="text-[.85rem]">1.3k Comments</span>
+                  </div>
+                  <div className="flex gap-2 rounded-full border items-center px-4 py-2">
+                    <Share size={16} strokeWidth={0.75} />
+                    <span className="text-[.85rem]">Share</span>
+                  </div>
+                </CardFooter>
+              </Card>
             </>
           ))}
         </div>

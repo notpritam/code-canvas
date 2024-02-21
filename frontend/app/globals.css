@@ -74,3 +74,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+.hs::-webkit-scrollbar {
+  width: 4px; /* Width of the scrollbar */
+  background-color: transparent; /* Transparent background */
+}
+
+/* Colored scrollbar thumb */
+.hs::-webkit-scrollbar-thumb {
+  background-color: #062e08; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners */
+}
