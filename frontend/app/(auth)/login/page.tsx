@@ -17,9 +17,9 @@ const links: linksProps[] = [
   { name: "Blog", link: "/blog" },
 ];
 
-function Page() {
+const Page = async () => {
   return (
-    <div className="w-screen relative h-screen overflow-hidden max-w-screen flex">
+    <div className="w-screen relative h-screen max-h-screen overflow-hidden max-w-screen flex">
       <Image
         src={"/bg.jpg"}
         fill
@@ -47,7 +47,11 @@ function Page() {
         <div className="flex gap-6">
           {links.map((link) => (
             <>
-              <Link className="text-white text-6" href={link.link}>
+              <Link
+                key={link.name}
+                className="text-white text-6"
+                href={link.link}
+              >
                 {link.name}
               </Link>
             </>
@@ -70,6 +74,6 @@ function Page() {
       </div>
     </div>
   );
-}
+};
 
 export default Page;
