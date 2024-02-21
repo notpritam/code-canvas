@@ -167,7 +167,8 @@ export default function Home() {
             </>
           ))}
         </div>
-        <div className="px-2 py-4 border-l-[1px] w-full gap-4 h-full max-w-[400px] flex flex-col">
+        <div className="px-4 py-4 border-l-[1px] w-full gap-4 h-full max-w-[400px] flex flex-col">
+          <Button>Post a Question</Button>
           {navLinks.map((item) => (
             <>
               <div className="flex cursor-pointer gap-2 px-4 py-2">
